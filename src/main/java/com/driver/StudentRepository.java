@@ -25,7 +25,7 @@ public class StudentRepository {
         teacherHashMap.put(teacherName, teacher);
     }
 
-    public void addStudentTeacherPair(String teacherName, String studentName) {
+    public void addStudentTeacherPair(String studentName,String teacherName) {
         List<String> studentsList = new ArrayList<>();
         if (teacherStudentHashMap.containsKey(teacherName)) {
             studentsList = teacherStudentHashMap.get(teacherName);
@@ -108,3 +108,7 @@ public class StudentRepository {
 
     }
 }
+
+
+
+
