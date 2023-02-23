@@ -90,7 +90,21 @@ public class StudentRepository {
     }
 
     public void deleteAllTeachers() {
-        studentHashMap = new HashMap<>();
+        teacherHashMap = new HashMap<>();
+        HashSet<String> studentSet = new HashSet<>();
+        for (String tName : teacherStudentHashMap.keySet()) {
+            for (String sName : teacherStudentHashMap.get(tName)) {
+                studentSet.add(sName);
+            }
+        }
+
+        for (String sName : studentSet) {
+            if (studentHashMap.containsKey(sName)) {
+                studentHashMap.remove(sName);
+            }
+        }
+
         teacherStudentHashMap = new HashMap<>();
+
     }
 }
